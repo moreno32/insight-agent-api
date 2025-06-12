@@ -1,29 +1,96 @@
+# =======================================================================
+#  Git Ignore File for the Amplify AI Project
+# =======================================================================
+#
+# This file specifies intentionally untracked files that Git should ignore.
+#
+# =======================================================================
+
+# --- Environment Variables ---
+# Contains secrets and environment-specific configurations. NEVER commit this.
+.env
+.env.*
+!.env.example  # Important: Exclude .env but DO commit the example template.
+
+
+# --- Python ---
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environment
+# Distribution / packaging
+/dist/
+/build/
+*.egg-info/
+*.egg
+
+
+# --- Virtual Environments ---
+# Standard virtual environment directories
 .venv
 venv/
 env/
+ENV/
+.env/
 
-# IDE / Editor specific
+
+# --- Generated Data & Databases ---
+# Contains the generated ChromaDB vector store. This is created at runtime
+# and should not be part of the source code.
+db/
+/db/chroma/
+
+
+# --- Machine Learning Models & Cache ---
+# Ignore large model files that might be downloaded or saved locally.
+# The small classifier model in 'models/' is currently tracked, but this
+# is a good practice for larger models.
+*.pkl
+*.joblib
+*.h5
+# Hugging Face cache (though usually outside the project dir, good to have)
+.cache/
+
+
+# --- IDE / Editor Specific ---
+# VSCode, PyCharm, Sublime, etc.
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+# Vim swap files
 *.swp
+*.swo
 
-# Testing
+
+# --- Operating System Files ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.lnk
+
+
+# --- Testing & Coverage ---
+# Pytest and coverage artifacts
 .pytest_cache/
+htmlcov/
 .coverage
+.coverage.*
 
-# Environment variables
-.env
 
-# Notebook checkpoints
+# --- Notebooks ---
+# Jupyter notebook checkpoints
 .ipynb_checkpoints
 
-# Build artifacts
-dist/
-build/
-*.egg-info/
+
+# --- Logs ---
+# Application and system logs
+*.log
+logs/
