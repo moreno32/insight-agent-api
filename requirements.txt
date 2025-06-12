@@ -1,0 +1,50 @@
+# =======================================================================
+#  Python Dependencies for Amplify AI
+# =======================================================================
+#
+# Use this file to install all necessary packages for the project:
+# pip install -r requirements.txt
+#
+# =======================================================================
+
+
+# --- Core Application Framework ---
+# For building the web server and API
+fastapi
+uvicorn[standard]       # ASGI server to run FastAPI
+pydantic                # Core data validation used by FastAPI
+pydantic-settings       # For loading configuration from .env files
+
+
+# --- AI & Machine Learning (Core Libraries) ---
+# Foundational libraries for ML and Deep Learning tasks
+
+scikit-learn            # For loading and using the classical ML classifier model
+joblib                  # Specifically for loading the .pkl classifier file
+torch                   # The main deep learning framework
+transformers            # For using Hugging Face pipelines (like the image captioner)
+Pillow                  # For image manipulation (PIL)
+diffusers               # For the Stable Diffusion image generation pipeline
+sentence-transformers   # Core library for generating sentence embeddings
+
+
+# --- LangChain Ecosystem ---
+# For orchestrating the AI agent and RAG pipeline
+
+langchain               # The main LangChain library
+langchain-community     # For community-integrations like ChatOllama and Chroma
+langchain-core          # Core abstractions of the LangChain framework
+langchain-huggingface   # For the HuggingFaceEmbeddings wrapper
+
+
+# --- Vector Database ---
+# For storing and retrieving document embeddings
+
+chromadb
+
+
+# --- Testing & Utilities ---
+# For running tests and making HTTP requests during tests
+
+pytest                  # The standard framework for testing in Python
+httpx                   # A modern HTTP client, used for testing FastAPI endpoints
